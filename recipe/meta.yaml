@@ -10,7 +10,7 @@ source:
   sha256: fdc4772d086ea0194d3e65a9ea471bd787e46888f472b1b57c4ad5515c3a899d
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
@@ -23,7 +23,6 @@ requirements:
     - pip
     - python >=3.6
     - {{ mpi }}
-    - openssh
     - transonic
     - fftw
     - jinja2
@@ -34,7 +33,6 @@ requirements:
     - libcblas
   run:
     - {{ mpi }}
-    - openssh
     - fluiddyn
     - pandas
     - transonic
