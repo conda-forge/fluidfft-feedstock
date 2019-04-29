@@ -49,18 +49,18 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - {{ mpi }} # [ mpi != 'nompi' ]
+    - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh
     - transonic
     - fftw
     - jinja2
     - cython
-    - mpi4py # [ mpi != 'nompi' ]
+    - mpi4py  # [ mpi != 'nompi' ]
     - pythran
     - libblas
     - libcblas
   run:
-    - {{ mpi }} # [ mpi != 'nompi' ]
+    - {{ mpi }}  # [ mpi != 'nompi' ]
     - fluiddyn
     - pandas
     - transonic
