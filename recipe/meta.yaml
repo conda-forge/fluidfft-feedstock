@@ -50,6 +50,7 @@ requirements:
     - pip
     - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
+    - {{ compiler('cxx') }}
     - openssh
     - transonic
     - fftw
@@ -79,8 +80,8 @@ test:
     - fluidfft.util
     - fluidfft.fft2d.with_fftw2d
     - fluidfft.fft3d.with_fftw3d
-    - fluidfft.fft2d.mpi_with_fftw1d
-    - fluidfft.fft3d.mpi_with_fftw1d
+    - fluidfft.fft2d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
+    - fluidfft.fft3d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
   commands:
     - fluidfft-bench
     - fluidfft-bench-analysis
