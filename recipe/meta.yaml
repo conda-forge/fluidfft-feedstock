@@ -61,6 +61,7 @@ requirements:
     - libcblas
   run:
     - {{ mpi }}  # [ mpi != 'nompi' ]
+    - {{ compiler('cxx') }}
     - fluiddyn
     - pandas
     - transonic
