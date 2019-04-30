@@ -57,7 +57,7 @@ requirements:
     - jinja2
     - cython
     - mpi4py  # [ mpi != 'nompi' ]
-    - pythran  # [ no win ]
+    - pythran  # [ not win ]
     - libblas
     - libcblas
   run:
