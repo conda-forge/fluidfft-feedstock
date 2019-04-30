@@ -51,13 +51,13 @@ requirements:
     - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - {{ compiler('cxx') }}
-    - openssh
+    - openssh  # [ mpi != 'nompi' ]
     - transonic
     - fftw
     - jinja2
     - cython
     - mpi4py  # [ mpi != 'nompi' ]
-    - pythran
+    - pythran  # [ no win ]
     - libblas
     - libcblas
   run:
