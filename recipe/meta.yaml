@@ -51,7 +51,7 @@ requirements:
     - pip
     - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
-    - {{ compiler('cxx') }}
+    # - {{ compiler('cxx') }}
     - openssh  # [ mpi == 'openmpi' ]
     - transonic
     - fftw
@@ -64,7 +64,7 @@ requirements:
   run:
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
-    - {{ compiler('cxx') }}
+    # - {{ compiler('cxx') }}
     - fluiddyn
     - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pandas
