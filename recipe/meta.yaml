@@ -52,7 +52,7 @@ requirements:
     - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - {{ compiler('cxx') }}
-    - openssh  # [ mpi != 'nompi' ]
+    - openssh  # [ mpi == 'openmpi' ]
     - transonic
     - fftw
     - jinja2
@@ -63,6 +63,7 @@ requirements:
     - libcblas
   run:
     - {{ mpi }}  # [ mpi != 'nompi' ]
+    - openssh  # [ mpi == 'openmpi' ]
     - {{ compiler('cxx') }}
     - fluiddyn
     - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
