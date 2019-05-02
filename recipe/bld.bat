@@ -1,36 +1,34 @@
 setlocal EnableDelayedExpansion
 
-echo [fftw3]^
-use = True^
-dir =^
-include_dir =^
-library_dir =^
-^
-[fftw3_mpi]^
-use = False^
-dir =^
-include_dir =^
-library_dir =^
-^
-[cufft]^
-use = False^
-dir =^
-include_dir =^
-library_dir =^
-^
-[pfft]^
-use = False^
-dir =^
-include_dir =^
-library_dir =^
-^
-[p3dfft]^
-use = False^
-dir =^
-include_dir =^
-library_dir =^
-^
-> site.cfg
+echo "[fftw3]" > site.cfg
+echo "use = True" >> site.cfg
+echo "dir =" >> site.cfg
+echo "include_dir =" >> site.cfg
+echo "library_dir =" >> site.cfg
+
+echo "[fftw3_mpi]" >> site.cfg
+echo "use = False" >> site.cfg
+echo "dir =" >> site.cfg
+echo "include_dir =" >> site.cfg
+echo "library_dir =" >> site.cfg
+
+echo "[cufft]" >> site.cfg
+echo "use = False" >> site.cfg
+echo "dir =" >> site.cfg
+echo "include_dir =" >> site.cfg
+echo "library_dir =" >> site.cfg
+
+echo "[pfft]" >> site.cfg
+echo "use = False" >> site.cfg
+echo "dir =" >> site.cfg
+echo "include_dir =" >> site.cfg
+echo "library_dir =" >> site.cfg
+
+echo "[p3dfft]" >> site.cfg
+echo "use = False" >> site.cfg
+echo "dir =" >> site.cfg
+echo "include_dir =" >> site.cfg
+echo "library_dir =" >> site.cfg
 
 
 $PYTHON -m pip install --no-deps --ignore-installed -vv .[full]
