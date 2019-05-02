@@ -39,7 +39,8 @@ build:
     - {{ name }} * {{ mpi_prefix }}_*
   {% endif %}
 
-  skip: true  # [win and (mpi != 'nompi')]
+  # skip: true  # [win and (mpi != 'nompi')]
+  skip: true  # [win]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
@@ -51,7 +52,6 @@ requirements:
     - pip
     - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
-    # - {{ compiler('cxx') }}
     - openssh  # [ mpi == 'openmpi' ]
     - transonic
     - fftw
@@ -64,7 +64,6 @@ requirements:
   run:
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
-    # - {{ compiler('cxx') }}
     - fluiddyn
     - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pandas
