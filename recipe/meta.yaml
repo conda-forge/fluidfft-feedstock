@@ -63,7 +63,8 @@ requirements:
   run:
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - {{ compiler('cxx') }}
-    - {{ fluiddyn }}
+    - fluiddyn
+    - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pandas
     - transonic
     - fftw
