@@ -86,6 +86,8 @@ test:
     - fluidfft.fft3d.with_fftw3d
     - fluidfft.fft2d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
     - fluidfft.fft3d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
+    - fluidfft.fft2d.mpi_with_fftwmpi2d  # [ mpi != 'nompi' ]
+    - fluidfft.fft3d.mpi_with_fftwmpi3d  # [ mpi != 'nompi' ]
   commands:
     - fluidfft-bench
     - fluidfft-bench-analysis
