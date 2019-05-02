@@ -55,6 +55,7 @@ requirements:
     - openssh  # [ mpi == 'openmpi' ]
     - transonic
     - fftw
+    - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - jinja2
     - cython
     - mpi4py  # [ mpi != 'nompi' ]
@@ -69,6 +70,7 @@ requirements:
     - pandas
     - transonic
     - fftw
+    - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pyfftw
 
 test:
