@@ -1,5 +1,14 @@
 {% set name = "fluidfft" %}
 {% set version = "0.2.9" %}
+{% set build = 2000 %}
+# ensure mpi is defined (needed for conda-smithy recipe-lint)
+{% set mpi = mpi or 'nompi' %}
+
+{% if mpi == 'nompi' %}
+# prioritize nompi variant via build number
+{% set build = build + 100 %}
+{% endif %}
+
 
 package:
   name: "{{ name|lower }}"
@@ -10,11 +19,32 @@ source:
   sha256: fdc4772d086ea0194d3e65a9ea471bd787e46888f472b1b57c4ad5515c3a899d
 
 build:
-  number: 2
+
+  number: {{ build }}
+  # add build string so packages can depend on
+  # mpi or nompi variants explicitly:
+  # `pkg * mpi_mpich_*` for mpich
+  # `pkg * mpi_*` for any mpi
+  # `pkg * nompi_*` for no mpi
+
+  {% if mpi != 'nompi' %}
+  {% set mpi_prefix = "mpi_" + mpi %}
+  {% else %}
+  {% set mpi_prefix = "nompi" %}
+  {% endif %}
+  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"
+
+  {% if mpi != 'nompi' %}
+
+  run_exports:
+    - {{ name }} * {{ mpi_prefix }}_*
+  {% endif %}
+
+  # skip: true  # [win]
+  skip: true  # [win and (mpi != 'nompi')]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
-  skip: true  # [win and (mpi != 'nompi')]
 
 requirements:
   build:
@@ -22,22 +52,26 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - {{ mpi }}
-    - openssh
+    - {{ mpi }}  # [ mpi != 'nompi' ]
+    - openssh  # [ mpi == 'openmpi' ]
     - transonic
     - fftw
+    - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - jinja2
     - cython
-    - mpi4py
-    - pythran
+    - mpi4py  # [ mpi != 'nompi' ]
+    - pythran  # [ not win ]
     - libblas
     - libcblas
   run:
-    - {{ mpi }}
+    - {{ mpi }}  # [ mpi != 'nompi' ]
+    - openssh  # [ mpi == 'openmpi' ]
     - fluiddyn
+    - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pandas
     - transonic
     - fftw
+    - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pyfftw
 
 test:
@@ -51,8 +85,10 @@ test:
     - fluidfft.util
     - fluidfft.fft2d.with_fftw2d
     - fluidfft.fft3d.with_fftw3d
-    - fluidfft.fft2d.mpi_with_fftw1d
-    - fluidfft.fft3d.mpi_with_fftw1d
+    - fluidfft.fft2d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
+    - fluidfft.fft3d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
+    - fluidfft.fft2d.mpi_with_fftwmpi2d  # [ mpi != 'nompi' ]
+    - fluidfft.fft3d.mpi_with_fftwmpi3d  # [ mpi != 'nompi' ]
   commands:
     - fluidfft-bench
     - fluidfft-bench-analysis
