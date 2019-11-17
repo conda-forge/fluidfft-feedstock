@@ -64,6 +64,7 @@ requirements:
     - libblas
     - libcblas
   run:
+    - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
     - fluiddyn
