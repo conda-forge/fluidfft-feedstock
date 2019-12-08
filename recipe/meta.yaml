@@ -40,7 +40,7 @@ build:
     - {{ name }} * {{ mpi_prefix }}_*
   {% endif %}
 
-  # skip: true  # [win]
+  skip: true  # [py<36]
   skip: true  # [win and (mpi != 'nompi')]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
@@ -51,26 +51,28 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - pip
-    - python >=3.6
+    - python
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
-    - transonic
+    - transonic >=0.4.2
     - fftw
     - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - jinja2
     - cython
     - mpi4py  # [ mpi != 'nompi' ]
     - pythran 
+    - numpy 1.17.*
     - libblas
     - libcblas
   run:
-    - python >=3.6
+    - python
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
     - fluiddyn
     - fluiddyn * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pandas
-    - transonic
+    - transonic >=0.4.2
+    - {{ pin_compatible('numpy') }}
     - fftw
     - fftw * mpi_{{ mpi }}_*  # [mpi != 'nompi']
     - pyfftw
