@@ -7,7 +7,9 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '4'
+- '9'
+fftw:
+- '3'
 libblas:
 - 3.8 *netlib
 libcblas:
@@ -18,3 +20,6 @@ macos_min_version:
 - '10.9'
 mpi:
 - mpich
+pin_run_as_build:
+  fftw:
+    max_pin: x
