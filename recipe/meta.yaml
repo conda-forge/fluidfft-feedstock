@@ -63,6 +63,7 @@ requirements:
     - libblas
     - libcblas
   run:
+    - python >=3.6
     - {{ mpi }}  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
     - fluiddyn
@@ -94,7 +95,7 @@ test:
 
 about:
   home: https://bitbucket.org/fluiddyn/fluidfft
-  license: CeCILL-B
+  license: CECILL-2.1
   license_file: LICENSE.txt
   summary: Efficient and easy Fast Fourier Transform (FFT) for Python.
   description: |
