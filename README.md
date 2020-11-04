@@ -3,7 +3,7 @@ About fluidfft
 
 Home: https://bitbucket.org/fluiddyn/fluidfft
 
-Package license: CeCILL-B
+Package license: CECILL-2.1
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fluidfft-feedstock/blob/master/LICENSE.txt)
 
