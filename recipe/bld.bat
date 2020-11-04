@@ -31,4 +31,4 @@ echo include_dir = >> site.cfg
 echo library_dir = >> site.cfg
 
 
-python -m pip install --no-deps --ignore-installed -vv .[full]
+python -m pip install --no-deps --ignore-installed -vv .[fftw]

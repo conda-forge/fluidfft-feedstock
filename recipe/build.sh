@@ -66,4 +66,5 @@ library_dir =
 EOF
 cp site.cfgmpi site.cfg  # [mpi != 'nompi']
 
-$PYTHON -m pip install --no-deps --ignore-installed -vv .[full]
+$PYTHON -m pip install --no-deps --ignore-installed -vv .[fftw]  # [mpi == 'nompi']
+$PYTHON -m pip install --no-deps --ignore-installed -vv .[fftw,mpi]  # [mpi != 'nompi']
