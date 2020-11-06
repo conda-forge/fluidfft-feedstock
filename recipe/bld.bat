@@ -1,34 +1,8 @@
-setlocal EnableDelayedExpansion
+set DISABLE_PYTHRAN=1
 
-echo [fftw3] > site.cfg
-echo use = True >> site.cfg
-echo dir = >> site.cfg
-echo include_dir = >> site.cfg
-echo library_dir = >> site.cfg
+rem When Cython extensions are fixed, uncomment the following. See https://foss.heptapod.net/fluiddyn/fluidfft/-/issues/29
+rem COPY %RECIPE_DIR%\site_nompi.cfg .\site.cfg
+rem if errorlevel 1 exit 1
 
-echo [fftw3_mpi] >> site.cfg
-echo use = False >> site.cfg
-echo dir = >> site.cfg
-echo include_dir = >> site.cfg
-echo library_dir = >> site.cfg
-
-echo [cufft] >> site.cfg
-echo use = False >> site.cfg
-echo dir = >> site.cfg
-echo include_dir = >> site.cfg
-echo library_dir = >> site.cfg
-
-echo [pfft] >> site.cfg
-echo use = False >> site.cfg
-echo dir = >> site.cfg
-echo include_dir = >> site.cfg
-echo library_dir = >> site.cfg
-
-echo [p3dfft] >> site.cfg
-echo use = False >> site.cfg
-echo dir = >> site.cfg
-echo include_dir = >> site.cfg
-echo library_dir = >> site.cfg
-
-
-python -m pip install --no-deps --ignore-installed -vv .[full]
+"%PYTHON%" -m pip install .[fftw] --no-deps -vv
+if errorlevel 1 exit 1
