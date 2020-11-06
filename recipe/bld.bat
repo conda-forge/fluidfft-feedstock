@@ -1,4 +1,4 @@
-COPY %RECIPE_DIR%\site_nompi.cfg %cd% /s /e
+COPY %RECIPE_DIR%\site_nompi.cfg %cd%
 if errorlevel 1 exit 1
 
 "%PYTHON%" -m pip install .[fftw] --no-deps -vv

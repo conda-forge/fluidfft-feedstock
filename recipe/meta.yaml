@@ -66,6 +66,7 @@ requirements:
   run:
     - python
     - {{ mpi }}  # [ mpi != 'nompi' ]
+    - mpi4py  # [ mpi != 'nompi' ]
     - openssh  # [ mpi == 'openmpi' ]
     - fluiddyn
     - pandas
