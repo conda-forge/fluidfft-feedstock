@@ -84,8 +84,8 @@ test:
     - fluidfft.fft3d
     - fluidfft.test_init
     - fluidfft.util
-    - fluidfft.fft2d.with_fftw2d
-    - fluidfft.fft3d.with_fftw3d
+    - fluidfft.fft2d.with_fftw2d  # [not win]
+    - fluidfft.fft3d.with_fftw3d  # [not win]
     - fluidfft.fft2d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
     - fluidfft.fft3d.mpi_with_fftw1d  # [ mpi != 'nompi' ]
     - fluidfft.fft2d.mpi_with_fftwmpi2d  # [ mpi != 'nompi' ]
