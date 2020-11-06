@@ -38,9 +38,6 @@ build:
   run_exports:
     - {{ name }} * {{ mpi_prefix }}_*
 
-  script: "cp site_nompi.cfg site.cfg; {{ PYTHON }} -m pip install .[fftw] --no-deps -vv"
-  {% else %}
-  script: "cp site_mpi.cfg site.cfg; {{ PYTHON }} -m pip install .[fftw,mpi] --no-deps -vv"
   {% endif %}
 
   # skip: true  # [win and (mpi != 'nompi')]
