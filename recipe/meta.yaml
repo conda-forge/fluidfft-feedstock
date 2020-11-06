@@ -41,7 +41,7 @@ build:
   {% endif %}
 
   # skip: true  # [win and (mpi != 'nompi')]
-  skip: true  # [py<36]
+  skip: true  # [py<36 or (osx and py==36)]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
