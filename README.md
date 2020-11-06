@@ -97,13 +97,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_mpimpichpython3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fluidfft-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpimpichpython3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_mpimpichpython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
@@ -118,13 +111,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_mpinompipython3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fluidfft-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpinompipython3.6.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_mpinompipython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
@@ -136,13 +122,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fluidfft-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpinompipython3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_mpiopenmpipython3.6.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6533&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fluidfft-feedstock?branchName=master&jobName=osx&configuration=osx_64_mpiopenmpipython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
