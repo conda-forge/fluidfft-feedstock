@@ -260,5 +260,6 @@ Feedstock Maintainers
 =====================
 
 * [@CyrilleBonamy](https://github.com/CyrilleBonamy/)
+* [@ashwinvis](https://github.com/ashwinvis/)
 * [@paugier](https://github.com/paugier/)
 
