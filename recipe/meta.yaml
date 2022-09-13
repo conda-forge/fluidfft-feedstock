@@ -1,6 +1,6 @@
 {% set name = "fluidfft" %}
-{% set version = "0.3.2" %}
-{% set build = 2 %}
+{% set version = "0.3.3" %}
+{% set build = 0 %}
 # ensure mpi is defined (needed for conda-smithy recipe-lint)
 {% set mpi = mpi or 'nompi' %}
 
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9f1bb551a45a1ad196d8f1f8c81eb0611299f84a0320a1f910e54601e2bae39f
+  sha256: 7eb130999e8cce457bf1284f9766ca9ab1ae7103015fe9c660f3a588b563f92f
 
 build:
   number: {{ build }}
