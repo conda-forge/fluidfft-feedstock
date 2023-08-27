@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '14'
+- '15'
 fftw:
 - '3'
 libblas:
@@ -23,8 +23,6 @@ mpich:
 openmpi:
 - '4'
 pin_run_as_build:
-  fftw:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
