@@ -1,11 +1,11 @@
-About fluidfft
-==============
+About fluidfft-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fluidfft-feedstock/blob/main/LICENSE.txt)
 
 Home: https://foss.heptapod.net/fluiddyn/fluidfft
 
 Package license: LicenseRef-CeCILL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fluidfft-feedstock/blob/main/LICENSE.txt)
 
 Summary: Efficient and easy Fast Fourier Transform (FFT) for Python.
 
