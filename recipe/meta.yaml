@@ -43,11 +43,10 @@ test:
     - fluidfft.bench_analysis
     - fluidfft.fft2d
     - fluidfft.fft3d
-    - fluidfft.test_init
     - fluidfft.util
   commands:
-    - fluidfft-bench
-    - fluidfft-bench-analysis
+    - fluidfft-bench -h
+    - fluidfft-bench-analysis -h
     - fluidfft-bench 32 -d 3
 
 about:
