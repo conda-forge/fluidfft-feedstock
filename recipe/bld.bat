@@ -1,8 +1,10 @@
-set DISABLE_PYTHRAN=1
+:: check if clang-cl is on path as required
+clang-cl.exe --version
+if %ERRORLEVEL% neq 0 exit 1
 
-rem When Cython extensions are fixed, uncomment the following. See https://foss.heptapod.net/fluiddyn/fluidfft/-/issues/29
-rem COPY %RECIPE_DIR%\site_nompi.cfg .\site.cfg
-rem if errorlevel 1 exit 1
+:: set compilers to clang-cl
+set "CC=clang-cl"
+set "CXX=clang-cl"
 
-"%PYTHON%" -m pip install .[fftw] --no-deps -vv
+"%PYTHON%" -m pip install --no-deps --ignore-installed -vv .
 if errorlevel 1 exit 1
