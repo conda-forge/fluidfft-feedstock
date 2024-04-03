@@ -1,5 +1,5 @@
 {% set name = "fluidfft" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.0.post0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d5fd2058c8ddd7934339a0ccbf98df4a8b43de716e0dcc770d1b2cb09e72be64
+  sha256: 9c56278daf30a8d3af2ef872da7246ba64d75f1f902651308edc54e880a134b5
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<39]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
