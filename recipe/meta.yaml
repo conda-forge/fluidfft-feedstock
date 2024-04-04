@@ -44,6 +44,9 @@ test:
     - fluidfft.fft2d.operators
     - fluidfft.fft3d.operators
     - fluidfft.util
+    # manual imports of Pythran extensions
+    - fluidfft.fft2d.__pythran__.operators
+    - fluidfft.fft3d.__pythran__.operators
   commands:
     - fluidfft-bench -h
     - fluidfft-bench-analysis -h
