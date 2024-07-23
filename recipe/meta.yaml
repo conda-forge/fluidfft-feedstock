@@ -10,7 +10,7 @@ source:
   sha256: 70791c92f43d7611c5db89d069e745875fca9be02948156a6c1b184fbc87cb4d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
