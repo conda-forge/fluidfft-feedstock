@@ -28,8 +28,9 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - pip
     - python
+    - python-build
+    - pip
     - meson-python
     - numpy
     - transonic >=0.6.4
