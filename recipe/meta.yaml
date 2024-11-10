@@ -10,7 +10,7 @@ source:
   sha256: 31635a6fe22279c1c47bbf3a61202ab36c6110be409e5c7a785ef8a17158e1df
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
