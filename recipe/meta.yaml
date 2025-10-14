@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<310]
+  skip: true  # [py<311]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
