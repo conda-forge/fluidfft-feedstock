@@ -1,13 +1,13 @@
 {% set name = "fluidfft" %}
-{% set version = "0.4.5" %}
+{% set version = "0.4.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ebaad3ad4bfaeea7f9b5bd9d9679c2158ba67b7b101dde310e04b5e2f9193d3d
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5ea849cdb483833757216d9ddf922293e773aa0a56077fafcff2b95424cc5e71
 
 build:
   number: 0
