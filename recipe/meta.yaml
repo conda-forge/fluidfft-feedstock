@@ -1,17 +1,17 @@
 {% set name = "fluidfft" %}
-{% set version = "0.4.5" %}
+{% set version = "0.4.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ebaad3ad4bfaeea7f9b5bd9d9679c2158ba67b7b101dde310e04b5e2f9193d3d
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5ea849cdb483833757216d9ddf922293e773aa0a56077fafcff2b95424cc5e71
 
 build:
   number: 0
-  skip: true  # [py<311]
+  skip: true  # [py<312]
   entry_points:
     - fluidfft-bench = fluidfft.bench:run
     - fluidfft-bench-analysis = fluidfft.bench_analysis:run
@@ -22,7 +22,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - ninja                                  # [unix]
-    - pkg-config                             # [unix]
+    - pkgconf                                # [unix]
     # pythran code needs clang-cl on windows
     - clang                                  # [win]
     - {{ compiler('cxx') }}
@@ -33,15 +33,14 @@ requirements:
     - pip
     - meson-python
     - numpy
-    - transonic >=0.6.4
-    - pythran >=0.9.7
+    - transonic >=0.8.1
+    - pythran >=0.19.0
   run:
     - python
     - fluiddyn
     - pandas
-    - transonic >=0.6.4
+    - transonic >=0.8.1
     - pyfftw
-    - importlib-metadata  # [py<310]
 
 test:
   imports:
