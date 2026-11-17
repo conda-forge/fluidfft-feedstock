@@ -22,7 +22,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - ninja                                  # [unix]
-    - pkg-config                             # [unix]
+    - pkgconf                                # [unix]
     # pythran code needs clang-cl on windows
     - clang                                  # [win]
     - {{ compiler('cxx') }}
@@ -33,15 +33,14 @@ requirements:
     - pip
     - meson-python
     - numpy
-    - transonic >=0.6.4
-    - pythran >=0.9.7
+    - transonic >=0.8.1
+    - pythran >=0.19.0
   run:
     - python
     - fluiddyn
     - pandas
-    - transonic >=0.6.4
+    - transonic >=0.8.1
     - pyfftw
-    - importlib-metadata  # [py<310]
 
 test:
   imports:
